@@ -1,0 +1,8 @@
+x Github Projekt erzeugen
+  x aktuellen Stand hochladen
+    x Pruefen wo admin account hinterlegt ist
+      x wenn in db.sqlite3, dann von github ausschliessen
+x Neues Datenbankschema nutzen mit ShoppingItem und ShoppingListItem
+- Checkbox anschliessen
+- Reload bei hinzufuegen von neuem Element verbessern
+- Von anderen Nutzern hinzugefuegte Elemente automatisch nachladen
