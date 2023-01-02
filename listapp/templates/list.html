@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bauerlist</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <style>
@@ -36,7 +36,14 @@
 
     <div class="list-group">
     {% for item in all_items %}
-    <div class="list-group-item"><input type="checkbox">{{ item.shopping_item.name }}</div>
+    <div class="list-group-item">
+        <input 
+            type="checkbox" 
+            onclick="toggleCheckbox('{{ item.shopping_item.name }}')" 
+            {% if item.done %}checked{% endif %}
+        >
+        {{ item.shopping_item.name }}
+    </div>
     {% endfor %}
     </div>
 
@@ -54,6 +61,24 @@
                 body: formData
             });
             window.location.reload();
+        }
+
+        function toggleCheckbox(itemName) {
+            let token = '{{ csrf_token }}';
+
+            const request = new Request(
+                '/listapp/', 
+                {
+                    method: 'PUT', 
+                    headers: {
+                        'X-CSRFToken': token,
+                        'Content-type': 'application/json; charset=UTF-8'
+                    },
+                    mode: 'same-origin',
+                    body: JSON.stringify({'itemName': itemName})
+                });
+
+            fetch(request);
         }
     </script>
 
