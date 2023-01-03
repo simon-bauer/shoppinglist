@@ -4,6 +4,6 @@ x Github Projekt erzeugen
       x wenn in db.sqlite3, dann von github ausschliessen
 x Neues Datenbankschema nutzen mit ShoppingItem und ShoppingListItem
 x Checkbox anschliessen
-- Reload bei hinzufuegen von neuem Element verbessern
+x Button to delete all done items
+- Reload bei hinzufuegen von neuem Element und bei loeschen verbessern
 - Von anderen Nutzern hinzugefuegte Elemente automatisch nachladen
-- Button to delete all done items
