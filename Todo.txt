@@ -5,5 +5,7 @@ x Github Projekt erzeugen
 x Neues Datenbankschema nutzen mit ShoppingItem und ShoppingListItem
 x Checkbox anschliessen
 x Button to delete all done items
+x Adding a new item: check if name already exist. If yes, reuse this.
+- Output Items sorted
 - Reload bei hinzufuegen von neuem Element und bei loeschen verbessern
 - Von anderen Nutzern hinzugefuegte Elemente automatisch nachladen

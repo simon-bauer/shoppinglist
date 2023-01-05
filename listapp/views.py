@@ -5,9 +5,22 @@ import json
 
 def listapp(request):
     if request.method == 'POST':
-        print('received data:', request.POST['itemName'])
-        new_shopping_item = ShoppingItem.objects.create(name=request.POST['itemName'])
-        ShoppingListItem.objects.create(shopping_item=new_shopping_item)
+        item_name = request.POST['itemName']
+        print('add item with name: ', item_name)
+        
+        items = ShoppingListItem.objects.filter(shopping_item__name=item_name)
+        if len(items) > 0:
+            print('Item already in ShoppingList. Do Nothing.')
+            pass
+        else:
+            items = ShoppingItem.objects.filter(name=item_name)
+            if len(items) > 0:
+                print('ShoppingItem already exist, reuse it.')
+                new_shopping_item = items[0]
+            else:
+                print('Create Shopping Item')
+                new_shopping_item = ShoppingItem.objects.create(name=item_name)
+            ShoppingListItem.objects.create(shopping_item=new_shopping_item)
     elif request.method == 'PUT':
         request_body = json.loads(request.body.decode('utf-8'))
         print(request_body['itemName'])
