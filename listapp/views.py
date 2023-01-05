@@ -31,6 +31,6 @@ def listapp(request):
         for item in ShoppingListItem.objects.filter(done=True):
             item.delete()
         
-    all_items = ShoppingListItem.objects.all()
+    all_items = ShoppingListItem.objects.all().order_by('shopping_item__position', 'shopping_item__name')
     return render(request, 'list.html', {'all_items': all_items})
     
