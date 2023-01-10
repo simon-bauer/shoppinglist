@@ -6,6 +6,9 @@ x Neues Datenbankschema nutzen mit ShoppingItem und ShoppingListItem
 x Checkbox anschliessen
 x Button to delete all done items
 x Adding a new item: check if name already exist. If yes, reuse this.
-- Output Items sorted
+x Output Items sorted
+x Buttons should be on top of list
+x Show list with existing items while typing in new item name
+- Don't add empty strings / null values
 - Reload bei hinzufuegen von neuem Element und bei loeschen verbessern
-- Von anderen Nutzern hinzugefuegte Elemente automatisch nachladen
+- Anzeigen, wenn andere Nutzern Elemente hinzugefuegen
